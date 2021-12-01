@@ -4,32 +4,26 @@ on:
   push:
 
 jobs:
-  Linting:
-    name: Linting
+  Quality:
+    name: Quality
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - run: echo "::set-output name=version::$(cat .nvmrc)"
+        id: nvmrc
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: "${{ steps.nvmrc.outputs.version }}"
+
       - name: Install NPM packages
         run: npm install
+
       - name: Run Linter
         run: npm run lint
 
-  Tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-      - name: Install NPM packages
-        run: npm install
       - name: Run Tests
         run: npm run test
