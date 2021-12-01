@@ -1,0 +1,66 @@
+{
+  "name": "remix-lambda-at-edge",
+  "description": "Lambda@Edge adapter for Remix",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajhaining/remix-lambda-at-edge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ajhaining/remix-lambda-at-edge/issues"
+  },
+  "scripts": {
+    "build": "rollup -c && tsc -b",
+    "test": "jest --coverage --watch",
+    "watch": "rollup -c -w",
+    "lint": "eslint --cache --ext .tsx,.ts,.js,.jsx .",
+    "format": "prettier --ignore-path .eslintignore --write ./",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@remix-run/node": "1.0.5",
+    "@remix-run/server-runtime": "^1.0.5",
+    "@types/aws-lambda": "^8.10.82"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@types/jest": "^25.2.3",
+    "@types/lambda-tester": "^3.6.1",
+    "@types/node-fetch": "^2.5.7",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-flowtype": "^5.10.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "7.0.2",
+    "jest": "^26.0.1",
+    "lambda-tester": "^4.0.1",
+    "lint-staged": "11.2.0",
+    "prettier": "^2.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.36.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "typescript": "^4.2.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": "prettier --write"
+  }
+}
