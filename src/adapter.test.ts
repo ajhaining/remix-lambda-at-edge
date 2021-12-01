@@ -12,7 +12,7 @@ import {
 import type {
   CloudFrontRequestEvent,
   CloudFrontRequest,
-  CloudFrontResultResponse,
+  CloudFrontResultResponse
 } from "aws-lambda";
 
 jest.mock("@remix-run/server-runtime");

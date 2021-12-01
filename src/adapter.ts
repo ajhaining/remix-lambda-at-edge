@@ -10,7 +10,7 @@ import { createRequestHandler as createRemixRequestHandler } from "@remix-run/se
 import type {
   CloudFrontRequestEvent,
   CloudFrontRequestHandler,
-  CloudFrontHeaders,
+  CloudFrontHeaders
 } from "aws-lambda";
 import type {
   AppLoadContext,
