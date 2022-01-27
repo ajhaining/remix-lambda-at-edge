@@ -1,7 +1,7 @@
 {
   "name": "remix-lambda-at-edge",
   "description": "Lambda@Edge adapter for Remix",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/ajhaining/remix-lambda-at-edge.git"
@@ -34,6 +34,7 @@
     "@types/jest": "^25.2.3",
     "@types/lambda-tester": "^3.6.1",
     "@types/node-fetch": "^2.5.7",
+    "@types/react": "^17.0.38",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-eslint": "^10.1.0",
@@ -62,5 +63,10 @@
       "prettier --write"
     ],
     "*.{json,md}": "prettier --write"
-  }
+  },
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "/build"
+  ]
 }
